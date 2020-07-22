@@ -13,7 +13,18 @@ router.post("/burgers", async function(req, res) {
     res.status(200).send("Burger ADDED!");
 });
 
-router.put("/burgers", async function(req, res) {
-    console.log("I'm changing a burger!");
-    await BurgerModel.updateBurger(req.body, )
+// router.put("/burgers", async function(req, res) {
+//     console.log("I'm changing a burger!");
+//     await BurgerModel.updateBurger(req.body, )
+// });
+
+router.get("/", async function(req, res) {
+    console.log("I'ma get dem burgers...");
+    let allBurgers = await BurgerModel.getBurgers();
+    console.log(allBurgers);
+    res.render("index", {
+        burgers: allBurgers
+    })
 });
+
+module.exports = router;

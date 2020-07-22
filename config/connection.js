@@ -1,6 +1,6 @@
 //Define npm dependencies.
 const mysql = require("mysql");
-require("dotev").config();
+require("dotenv").config();
 
 function connectDB () {
     connection = mysql.createConnection({

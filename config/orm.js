@@ -29,7 +29,7 @@ class DB {
     }
     selectAll(tableName) {
         return new Promise((resolve, reject) => {
-            this.connection.query('SELECT * FROM ??', [tableName], (err, rows) => {
+            this.connection.query("SELECT * FROM ??", [tableName], function (err, rows) {
                 if (err) reject(err);
                 resolve(rows);
             });
@@ -69,7 +69,7 @@ class DB {
 
 };
 
-
+module.exports = DB;
 
 
 

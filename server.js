@@ -19,8 +19,8 @@ app.engine("handlebars", expresshdbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
 
 //Outline routes to be built and used.
-var routes = require("./controllers/burgers_controller.js");
-app. unsubscribe(routes);
+var router = require("./controllers/burgers_controller.js");
+app.use(router);
 
 //Ensure that express is listening on the desired port.
 app.listen(PORT, function() {
