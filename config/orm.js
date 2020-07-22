@@ -1,4 +1,4 @@
-const db = require("../config/connection");
+const {connectDB, close} = require("../config/connection");
 
 
 // function createQMarks(number) {
@@ -23,7 +23,10 @@ const db = require("../config/connection");
 //     return arr.toString();
 // }
 
-const orm = {
+class DB {
+    constructor() {
+        this.connection = connectDB();
+    }
     selectAll(tableName) {
         return new Promise((resolve, reject) => {
             this.connection.query('SELECT * FROM ??', [tableName], (err, rows) => {
@@ -31,7 +34,7 @@ const orm = {
                 resolve(rows);
             });
         });
-    },
+    }
 
     insertOne(tableName, value) {
         return new Promise((resolve, reject) => {
@@ -40,7 +43,7 @@ const orm = {
                 resolve(rows);
             });
         });
-    },
+    }
 
     updateOne(tableName, update, condition) {
         return new Promise((resolve, reject) => {
@@ -49,7 +52,7 @@ const orm = {
                 resolve(rows);
             });
         });
-    },
+    }
 
     removeOne(tableName, condition) {
         return new Promise((resolve, reject) => {
@@ -59,6 +62,11 @@ const orm = {
             });
         });
     }
+
+    closeConnection() {
+        return close(this.connection);
+    }
+
 };
 
 
