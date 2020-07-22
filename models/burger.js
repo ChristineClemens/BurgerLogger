@@ -1,6 +1,12 @@
 const orm = require("../config/orm");
 
 class BurgerModel {
+    async getBurgers() {
+        const db = new orm();
+        await db.selectAll("burgers");
+        await db.close();
+    }
+    
     async addBurger(burger) {
         const db = new orm();
         await db.insertOne("burgers", burger);
