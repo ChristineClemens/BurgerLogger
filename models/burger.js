@@ -16,6 +16,8 @@ class BurgerModel {
 
     async updateBurger(burger, condition) {
         const db = new orm();
+        console.log(burger);
+        console.log(condition);
         await db.updateOne("burgers", burger, condition);
         await db.closeConnection();
     }

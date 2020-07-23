@@ -24,12 +24,13 @@ const {connectDB, close} = require("../config/connection");
 // }
 
 class DB {
-    constructor() {
-        this.connection = connectDB();
+    constructor(burgers_db) {
+        this.connection = connectDB(burgers_db);
     }
     selectAll(tableName) {
         return new Promise((resolve, reject) => {
             this.connection.query("SELECT * FROM ??", [tableName], function (err, rows) {
+                console.log("GIMME. Please.");
                 if (err) reject(err);
                 resolve(rows);
             });
