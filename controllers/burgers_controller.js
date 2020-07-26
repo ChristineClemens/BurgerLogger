@@ -15,7 +15,9 @@ router.post("/api/burgers", async function(req, res) {
 
 router.put("/api/burgers/:id", async function(req, res) {
     console.log("I'm changing a burger!");
-    await BurgerModel.updateBurger(req.body.burger_id);
+    var condition = `id = ${req.params.id}`;
+    console.log(req.body);
+    await BurgerModel.updateBurger(req.body.burger_name, condition);
     res.status(200).send("Burger changed successfully!");
 });
 
