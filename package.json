@@ -11,8 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/ChristineClemens/BurgerLogger.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Christine Clemens",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ChristineClemens/BurgerLogger/issues"
   },
