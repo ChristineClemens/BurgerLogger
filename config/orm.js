@@ -1,28 +1,5 @@
 const {connectDB, close} = require("../config/connection");
 
-
-// function createQMarks(number) {
-//     var arr = [];
-//     for(var i = 0; i < number; i++) {
-//         arr.push("?");
-//     } 
-//     return arr.toString();
-// };
-
-// function translateSQL(object) {
-//     var arr = [];
-//     for (var key in object) {
-//         var value = object[key];
-//         if (Object.hasOwnProperty.call(object, key)) {
-//             if (typeof value === "string" && value.indexOf(" ") >= 0) {
-//                 value = "'" + value + "'";
-//             }
-//             arr.push(key + "=" + value);
-//         }
-//     }
-//     return arr.toString();
-// }
-
 class DB {
     constructor(burgers_db) {
         this.connection = connectDB(burgers_db);
@@ -46,18 +23,18 @@ class DB {
         });
     }
 
-    updateOne(tableName, update, condition) {
+    updateOne(tableName, column, update, id) {
         return new Promise((resolve, reject) => {
-            this.connection.query("UPDATE ?? SET ? WHERE ?", [tableName, update, condition], function (err, rows) {
+            this.connection.query("UPDATE ?? SET ?? = ? WHERE id = ?", [tableName, column, update, id], function (err, rows) {
                 if (err) reject(err);
                 resolve(rows);
             });
         });
     }
 
-    removeOne(tableName, condition) {
+    removeOne(tableName, id) {
         return new Promise((resolve, reject) => {
-            this.connection.query("DELETE FROM ?? WHERE ?", [tableName, condition], function (err, rows) {
+            this.connection.query("DELETE FROM ?? WHERE id = ?", [tableName, id], function (err, rows) {
                 if (err) reject(err);
                 resolve(rows);
             });
@@ -67,11 +44,6 @@ class DB {
     closeConnection() {
         return close(this.connection);
     }
-
 };
 
 module.exports = DB;
-
-
-
-

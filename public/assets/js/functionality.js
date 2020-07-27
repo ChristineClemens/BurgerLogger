@@ -30,7 +30,7 @@ $(function() {
         type: "PUT",
         data: devouredState
       }).then(function() {
-        console.log("Burger devoured");
+        console.log("Burger ready for pickup!");
         location.reload();
       });
     });
@@ -44,6 +44,9 @@ $(function() {
       $.ajax({
         type: "DELETE",
         url: "/api/burgers/" + id
-      }).then(location.reload());
+      }).then(function() {
+        console.log("Burger has been picked up!");
+        location.reload();
     });
   });
+});

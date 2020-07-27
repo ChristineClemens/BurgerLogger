@@ -15,9 +15,11 @@ router.post("/api/burgers", async function(req, res) {
 
 router.put("/api/burgers/:id", async function(req, res) {
     console.log("I'm changing a burger!");
-    var condition = `id = ${req.params.id}`;
+    var id = `${req.params.id}`;
+    var value = req.body.devoured;
+    var column = "devoured";
     console.log(req.body);
-    await BurgerModel.updateBurger(req.body.burger_name, condition);
+    await BurgerModel.updateBurger(column, value, id);
     res.status(200).send("Burger changed successfully!");
 });
 
@@ -29,14 +31,11 @@ router.get("/", async function(req, res) {
     })
 });
 
-router.delete("/api/burgers", async function(req, res) {
-    await BurgerModel.removeBurger(condition, function(result) {
-        if (result.changedRows === 0) {
-            return res.status(404).end();
-        } else {
-            res.status(200).end();
-        }
-    });
-});
+router.delete("/api/burgers/:id", async function(req, res) {
+  console.log("I'm deleting a burger!");
+    id = `${req.params.id}`;
+    await BurgerModel.removeBurger(id);
+    res.status(200).send("Burger deleted successfully!");
+  });
 
 module.exports = router;

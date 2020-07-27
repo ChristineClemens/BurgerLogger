@@ -14,17 +14,15 @@ class BurgerModel {
         await db.closeConnection();
     }
 
-    async updateBurger(burger, condition) {
+    async updateBurger(column, value, id) {
         const db = new orm();
-        console.log(burger);
-        console.log(condition);
-        await db.updateOne("burgers", burger, condition);
+        await db.updateOne("burgers", column, value, id);
         await db.closeConnection();
     }
 
-    async removeBurger(condition) {
+    async removeBurger(id) {
         const db = new orm();
-        await db.removeOne("burgers", condition);
+        await db.removeOne("burgers", id);
         await db.closeConnection();
     }
 }
