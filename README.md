@@ -3,7 +3,7 @@
 ### Description
 This application was designed with the intention of creating a platform on which to track burger orders as they are placed and picked up using the MVC model and a server rendered UI. Users are able to select a dining option from the drop-down menu and make their selection. Once the selection has been made, the order will appear in the "Order Your Burger" section. When the button is pressed next to each order, they will be moved to the "Burger Is Ready for Pickup!" column. When the button next to each order is pressed, the burger will be removed from the UI. Each order will be displayed with an order id to mark the sequence and quantity of orders made throughout the session. 
 
-![alt text](BurgerLogger.png)
+![alt text](https://github.com/ChristineClemens/BurgerLogger/blob/master/public/assets/css/img/BurgerLogger.PNG)
 
 ### Table of Contents
 - [Installation](#Installation) 
@@ -55,5 +55,5 @@ There are currently no contributions to this project. If you would like to becom
 | <a href= "christineclemens.tesol@gmail.com" target="_blank">Contact Me</a> |
 **This project was created by Christine Clemens.**     
 
-*GitHub Repository:* https://github.com/ChristineClemens/BurgerLogger              
-*Deployed Application:*          
+**GitHub Repository:** https://github.com/ChristineClemens/BurgerLogger              
+**Deployed Application:** https://infinite-badlands-97982.herokuapp.com/         
