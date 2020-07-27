@@ -14,12 +14,12 @@ This application was designed with the intention of creating a platform on which
 
 ### Installation
 - node.js (https://nodejs.org/en/)
-- axios (npm install axios)
-- fs (npm install fs)
-- inquirer (npm install inquirer)
+- mysql (npm install mysql)
+- express (npm install express)
+- express-handlebars (npm install express-handlebars)
 
 ### Usage
-In order to use this application effectively, simply clone this repository to your local computer. Be sure to have the node.js server environment installed as well as the mysql, expres, and express-handlebars modules that can be downloaded by entering “npm install <module>” in the command line. You will also need to create a .env file that contains the user, password, and database name you will be using. Following this setup, initialize the JavaScript file by entering “node server.js” in the command line. If successful, you will be greeted with "Server listening on http://localhost:8080"! Type this URL into the browser search bar to access the application.       
+In order to use this application effectively, simply clone this repository to your local computer. Be sure to have the node.js server environment installed as well as the mysql, express, and express-handlebars modules that can be downloaded by entering “npm install <module>” in the command line. You will also need to create a .env file that contains the user, password, and database name you will be using. Following this setup, initialize the JavaScript file by entering “node server.js” in the command line. If successful, you will be greeted with "Server listening on http://localhost:8080"! Type this URL into the browser search bar to access the application.       
 
 Alternatively, you can access the deployed application at:
 
