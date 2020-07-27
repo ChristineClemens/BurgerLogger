@@ -1,8 +1,8 @@
 const {connectDB, close} = require("../config/connection");
 
 class DB {
-    constructor(burgers_db) {
-        this.connection = connectDB(burgers_db);
+    constructor() {
+        this.connection = connectDB();
     }
     selectAll(tableName) {
         return new Promise((resolve, reject) => {
